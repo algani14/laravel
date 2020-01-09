@@ -13,7 +13,7 @@
 Route::get('/', function () {
     return view('welcome');
     });
-    
+
 
 //Route basic
 Route::get('/about', function () {
@@ -52,4 +52,25 @@ Route::get('latihan/{makan}/{minum}/{bayar}',function($a,$b,$c)
     return "saya pesan ".$a.'<br>'.
      "saya  minnum ".$b.'<br>'.
      "total harga Rp. ".$c;
+});
+
+Route::get('pesanan/{makan?}/{minum?}/{harga?}',function($mkn= null,$a= null,$harga = null)
+{
+
+
+    if ($mkn) {
+        echo "anda pesan " . $mkn;
+    }
+    if ($a) {
+        echo " & " . $a;
+    }
+    if ($harga) {
+        echo " harganya " . $harga;
+    }
+    if (!$mkn && !$a && !$harga) {
+        return "anda tidak memesan";
+    }
+
+
+
 });
