@@ -112,6 +112,35 @@ Route::get('/testmodel5', function() {
 });
 
 Route::get('/testmodel6', function() {
-$query = App\Penggajian::all();
-return $query;
+    $query = App\Penggajian::all();
+    return $query;
+});
+
+Route::get('/testmodel7-1', function() {
+    $query = App\Penggajian::where('alamat', 'rancamanyar')->get();
+    return $query;
+});
+
+Route::get('/testmodel7-2', function() {
+    $query = App\Penggajian::select('id','nama','agama')->
+    where('alamat','rancamanyar')
+    ->get();
+    return $query;
+});
+
+Route::get('/testmodel7/{id}', function($id) {
+    $query = App\Penggajian::find($id);
+    return $query;
+});
+
+Route::get('/testmodel8', function() {
+    $gaji = new App\Penggajian;
+    $gaji->nama = "irsyal";
+    $gaji->jabatan = "OB";
+    $gaji->jk = "Laki Laki";
+    $gaji->alamat = "TKI";
+    $gaji->agama = "Hindu";
+    $gaji->total_gaji = "3juta";
+    $gaji->save();
+    return $gaji;
 });
