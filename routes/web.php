@@ -144,3 +144,17 @@ Route::get('/testmodel8', function() {
     $gaji->save();
     return $gaji;
 });
+
+Route::get('/hay', 'MyController@hay');
+Route::get('/hay1', 'MyController@nama');
+Route::get('/hay2', 'MyController@saya');
+Route::get('/hay3', 'MyController@adalah');
+Route::get('/hay4', 'MyController@muhammad');
+Route::get('/hay5', 'MyController@alghani');
+Route::get('/hay6', 'MyController@halo');
+Route::get('/hay7', 'MyController@aku');
+Route::get('/hay8', 'MyController@adalah1');
+Route::get('/hay9', 'MyController@manusia');
+Route::get('/kucing/{kucing?}', 'MyController@kucing');
+Route::get('/beli/{a?}/{b?}/{c?}' , 'MyController@beli');
+
