@@ -78,6 +78,9 @@ class MyController extends Controller
         if ($ukuran < 7500) {
             echo " dengan ukuran small";
         }
+        if ($ukuran < 1) {
+            echo " salah server";
+        }
     }
     }
 }

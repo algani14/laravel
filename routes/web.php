@@ -154,7 +154,28 @@ Route::get('/hay5', 'MyController@alghani');
 Route::get('/hay6', 'MyController@halo');
 Route::get('/hay7', 'MyController@aku');
 Route::get('/hay8', 'MyController@adalah1');
-Route::get('/hay9', 'MyController@manusia');
-Route::get('/kucing/{kucing?}', 'MyController@kucing');
-Route::get('/beli/{a?}/{b?}/{c?}' , 'MyController@beli');
+Route::get('/beli','MyController@beli');
+//book crud
+
+Route::get('book','BookController@index');
+Route::get('book-create/{judul}','BookController@create');
+Route::get('book/{id}','BookController@show');
+Route::get('book-edit/{judul}/{id}','BookController@edit');
+Route::get('book-delete/{id}','BookController@delete');
+Route::get('tampil','BookController@tigadata');
+Route::get('tampil2','BookController@menghitung');
+
+//CRUD ARTIKEL
+
+// Route::get('arti','ArtikelController@index');
+// Route::get('arti/create','ArtikelController@create');
+// Route::get('arti','ArtikelController@store');
+// Route::get('arti/{id}','ArtikelController@show');
+// Route::get('arti/{id}/edit','ArtikelController@edit');
+// Route::PUT('arti/{id}','ArtikelController@update');
+// Route::DELETE('arti/{id}','ArtikelController@destroy');
+
+Route::resource('arti','ArtikelController');
+
+
 
