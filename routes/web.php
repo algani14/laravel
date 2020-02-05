@@ -177,5 +177,29 @@ Route::get('tampil2','BookController@menghitung');
 
 Route::resource('arti','ArtikelController');
 
+//Passing Data
+Route::get('passing', 'PracticeController@pass');
+Route::get('passing1', 'PracticeController@pass1');
+Route::get('passing2', 'PracticeController@pass2');
+Route::get('passing3', 'BarangController@index');
 
+//Book Route
+Route::resource('buku' , 'BookController');
+Route::resource('barang' , 'BarangController');
+
+//blade
+Route::get('home', function ()
+{
+    return view('home');
+});
+
+Route::get('about', function ()
+{
+    return view('about');
+});
+
+Route::get('contact', function ()
+{
+    return view('contact');
+});
 

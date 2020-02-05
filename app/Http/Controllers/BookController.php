@@ -11,7 +11,7 @@ class BookController extends Controller
     public function index()
     {
         $book = Book::all();
-        return $book;
+        return view ('book.index',compact('book'));
     }
     public function create($jdl)
     {
@@ -26,10 +26,10 @@ class BookController extends Controller
         $book->save();
         return $book;
     }
-    public function show($id)
-    {
-        $book = Book::select('title','publisher','price')->get();
-        return $book;
+    public function show($id){
+
+        $book = Book::findOrFail($id);
+        return view ('book.show', compact('book'));
     }
     public function edit($id,$jdl)
     {

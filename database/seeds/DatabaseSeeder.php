@@ -1,5 +1,5 @@
 <?php
-
+use App\Barang;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(PostsSeeder::class);
         // $this->call(PostsTableSeeder::class);
-        $this->call(ArtikelSeeder::class);
+        // $this->call(ArtikelSeeder::class);
+        factory(Barang::class,100)->create();
+
     }
 }
